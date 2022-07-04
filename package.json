@@ -5,15 +5,26 @@
   "source": "src/index.html",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build"
+    "build": "parcel build",
+    "lint": "eslint src --fix"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
+    "eslint": "^8.19.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-import-resolver-typescript": "^3.2.1",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "parcel": "^2.6.2",
-    "process": "^0.11.10"
+    "process": "^0.11.10",
+    "typescript": "^4.7.4"
   },
   "dependencies": {
     "@fortawesome/fontawesome-common-types": "^6.1.1",
