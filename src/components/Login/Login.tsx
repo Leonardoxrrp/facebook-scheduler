@@ -4,6 +4,9 @@ import Form from 'react-bootstrap/Form';
 import './login.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserAstronaut } from '@fortawesome/free-solid-svg-icons';
+import {
+  Link,
+} from 'react-router-dom';
 
 function Login() {
   return (
@@ -27,7 +30,7 @@ function Login() {
         <Form.Text className="text-muted login-signup-text">
           <span>Not a member?</span>
           {' '}
-          <a href="www.google.com">Signup</a>
+          <Link to="signup">Signup</Link>
         </Form.Text>
       </Form>
     </div>

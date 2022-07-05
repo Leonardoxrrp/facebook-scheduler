@@ -1,0 +1,46 @@
+.sign-up-container {
+    width: 300px;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 30px;
+    position: relative;
+}
+
+.sign-up-pill-height {
+    height: 45px;
+}
+
+.sign-up-input {
+    background-color: #F7F7F2 !important;
+}
+
+
+.sign-up-headline {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+.sign-up-btn {
+    margin-bottom: 20px;
+}
+.sign-up-signup-text {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.sign-up-dot {
+    height: 90px;
+    width: 90px;
+    background-color: #F7F7F2;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    /* top: -35px; */
+    top: -40px;
+    right: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

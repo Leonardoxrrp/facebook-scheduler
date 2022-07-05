@@ -1,11 +1,13 @@
 import React from 'react';
-import Login from '../components/Login/Login';
 import './sign-page.css';
+import {
+  Outlet,
+} from 'react-router-dom';
 
 function SignPage() {
   return (
     <div className="sign-page-container">
-      <Login />
+      <Outlet />
     </div>
   );
 }
