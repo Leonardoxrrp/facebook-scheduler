@@ -7,8 +7,13 @@ import { faUserAstronaut } from '@fortawesome/free-solid-svg-icons';
 import {
   Link,
 } from 'react-router-dom';
+import { userPool, cognitoUser } from '../utils/cognitoLibrary';
 
 function Login() {
+  const login = () => {
+
+  };
+
   return (
     <div className="login-container">
       <span className="login-dot">
@@ -24,7 +29,7 @@ function Login() {
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Control type="password" placeholder="Password..." className="rounded-pill login-input login-pill-height " />
         </Form.Group>
-        <Button variant="primary" type="submit" className="rounded-pill login-pill-height login-btn" style={{ width: '100%' }}>
+        <Button onClick={login} variant="primary" type="submit" className="rounded-pill login-pill-height login-btn" style={{ width: '100%' }}>
           Sign in
         </Button>
         <Form.Text className="text-muted login-signup-text">

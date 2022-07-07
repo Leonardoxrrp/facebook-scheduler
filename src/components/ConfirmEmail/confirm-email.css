@@ -1,0 +1,8 @@
+.confirm-email-container {
+    min-width: 300px;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 30px;
+    position: relative;
+}
