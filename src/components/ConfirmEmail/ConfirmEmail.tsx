@@ -2,25 +2,22 @@ import React, { useContext, useState } from 'react';
 import './confirm-email.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { cognitoUser } from '../utils/cognitoLibrary';
-import { cognitoContext } from '../utils/cognitoContext';
+import { useNavigate } from 'react-router-dom';
+import { cognitoContext } from '../AppContext';
 
 function ConfirmEmail() {
   const [code, setCode] = useState('');
-  const { email } = useContext(cognitoContext);
-  const confirmEmail = (e) => {
+  const { codeConfirmation } = useContext(cognitoContext);
+  const navigate = useNavigate();
+  const sessesionEmail = sessionStorage.getItem('email');
+
+  const onSubmit = (e) => {
     e.preventDefault();
-    cognitoUser(email).confirmRegistration(code, true, (err, result) => {
-      if (err) {
-        alert(err.message || JSON.stringify(err));
-        return;
-      }
-      console.log(`call result: ${result}`);
-    });
+    codeConfirmation(sessesionEmail, code, navigate);
   };
   return (
     <div className="confirm-email-container">
-      <Form onSubmit={confirmEmail}>
+      <Form onSubmit={onSubmit}>
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Control placeholder="Insert the confirmation code" className="rounded-pill sign-up-input sign-up-pill-height" value={code} onChange={(e) => setCode(e.target.value)} />
         </Form.Group>
