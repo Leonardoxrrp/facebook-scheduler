@@ -5,18 +5,18 @@ import './login.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserAstronaut } from '@fortawesome/free-solid-svg-icons';
 import {
-  Link,
+  Link, useNavigate,
 } from 'react-router-dom';
 import { cognitoContext } from '../AppContext';
 
 function Login() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const { login } = useContext(cognitoContext);
   const onSubmit = (e) => {
     e.preventDefault();
-    login(email, password);
+    login(email, password, navigate);
   };
   return (
     <div className="login-container">

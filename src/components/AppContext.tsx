@@ -1,23 +1,46 @@
 import React, {
-  createContext, useMemo,
+  createContext, useEffect, useMemo, useState,
 } from 'react';
 import { authenticationDetails, cognitoUser, userPool } from './utils/cognitoLibrary';
 
 const cognitoContext = createContext(null);
 
 function AppContext({ children }) {
+  const [status, setStatus] = useState(false);
+
   const login = (email, password) => {
     cognitoUser(email).authenticateUser(authenticationDetails(email, password), {
       onSuccess(result) {
         const accessToken = result.getAccessToken().getJwtToken();
-        console.log(accessToken, 'token');
+        console.log('Logged in !');
       },
-
       onFailure(err) {
         alert(err.message || JSON.stringify(err));
+        setStatus(false);
       },
     });
   };
+
+  const session = () => new Promise((resolve, reject) => {
+    const sessionUser = userPool.getCurrentUser();
+    if (sessionUser) {
+      sessionUser.getSession((err, auth) => {
+        if (err) {
+          reject();
+        } else {
+          resolve(auth);
+        }
+      });
+    } else {
+      reject();
+    }
+  });
+
+  useEffect(() => {
+    session().then(() => {
+      setStatus(true);
+    });
+  });
 
   const codeConfirmation = (email, code, navigate) => {
     cognitoUser(email).confirmRegistration(code, true, (err, result) => {
@@ -26,7 +49,6 @@ function AppContext({ children }) {
         return;
       }
       console.log(`call result: ${result}`);
-      navigate('/');
     });
   };
 
@@ -39,7 +61,10 @@ function AppContext({ children }) {
       navigate('/confirm-email');
     });
   };
-  const value = useMemo(() => ({ login, codeConfirmation, createUser }), []);
+
+  const value = useMemo(() => ({
+    login, codeConfirmation, createUser, status, setStatus, session,
+  }), [status]);
   return (
     <cognitoContext.Provider value={value}>
       {children}
