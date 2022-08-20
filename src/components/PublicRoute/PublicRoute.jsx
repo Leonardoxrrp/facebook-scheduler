@@ -8,7 +8,7 @@ import { cognitoContext } from '../AppContext';
 function PublicRoute() {
   const { status } = useContext(cognitoContext);
   return status ? (
-    <Navigate to="/app" />
+    <Navigate to="/dashboard" />
   ) : (
     <SignPage>
       <Outlet />
