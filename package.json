@@ -6,8 +6,8 @@
   "homepage": "https://leonardoxrrp.github.io/instagram-scheduler",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build",
-    "gh-deploy": "gh-pages -d build",
+    "build": "parcel build --public-url ./",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint src --fix"
   },
   "author": "",

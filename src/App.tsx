@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  BrowserRouter,
+  HashRouter,
   Routes,
   Route,
 } from 'react-router-dom';
@@ -15,7 +15,7 @@ import SignUp from './components/SignUp/SignUp';
 function App() {
   return (
     <AppContext>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route
             path="/"
@@ -45,7 +45,7 @@ function App() {
         )}
           />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </AppContext>
   );
 }
