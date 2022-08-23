@@ -5,7 +5,7 @@ import {
   Route,
 } from 'react-router-dom';
 import { AppContext } from './components/AppContext';
-import AuthApp from './components/dashboard/DashBoard';
+import AuthApp from './pages/DashBoard';
 import AuthRoute from './components/AuthRoute/AuthRoute';
 import ConfirmEmail from './components/ConfirmEmail/ConfirmEmail';
 import Login from './components/Login/Login';

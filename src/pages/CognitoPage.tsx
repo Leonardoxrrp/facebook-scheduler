@@ -4,7 +4,7 @@ import {
   Outlet,
 } from 'react-router-dom';
 
-function SignPage() {
+function CognitoPage() {
   return (
     <div className="sign-page-container">
       <Outlet />
@@ -12,4 +12,4 @@ function SignPage() {
   );
 }
 
-export default SignPage;
+export default CognitoPage;

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import {
   Navigate, Outlet,
 } from 'react-router-dom';
-import SignPage from '../../pages/SignPage';
+import CognitoPage from '../../pages/CognitoPage';
 import { cognitoContext } from '../AppContext';
 
 function PublicRoute() {
@@ -10,9 +10,9 @@ function PublicRoute() {
   return status ? (
     <Navigate to="/dashboard" />
   ) : (
-    <SignPage>
+    <CognitoPage>
       <Outlet />
-    </SignPage>
+    </CognitoPage>
   );
 }
 export default PublicRoute;

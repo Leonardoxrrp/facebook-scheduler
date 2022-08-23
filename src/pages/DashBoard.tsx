@@ -27,12 +27,17 @@ function DashBoard() {
       }
     }, { scope: 'public_profile,email' });
   };
+  const logout = () => {
+    FB.logout((response) => {
+      setAuth(false);
+    });
+  };
 
   console.log(auth, 'auth');
   return (
     <>
-      {!auth && <button onClick={login}>Facebook</button>}
-      {auth && <h1>LoggedIn</h1>}
+      {!auth && <button onClick={login}>Log in with Facebook</button>}
+      {auth && <button onClick={logout}>log out</button>}
     </>
   );
 }

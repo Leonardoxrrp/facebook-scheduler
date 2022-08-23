@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "source": "src/index.html",
-  "homepage": "https://leonardoxrrp.github.io/instagram-scheduler",
+  "homepage": "https://leonardoxrrp.github.io/facebook-scheduler",
   "scripts": {
     "start": "parcel",
     "build": "parcel build --public-url ./",
